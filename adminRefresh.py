@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any
 from urllib import error, parse, request
 
-DEFAULT_BASE_URL = "https://api.threatstream.vanditshah.com"
+DEFAULT_BASE_URL = "http://127.0.0.1:8000"
 DEFAULT_TIMEOUT_SECONDS = 120
 SUPPORTED_SOURCES = ("cisa_kev", "urlhaus", "openphish", "ransomware_live")
 
