@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ts-font-sans:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue",
+    Helvetica, Arial, sans-serif;
+  --ts-font-mono:
+    "SFMono-Regular", "SF Mono", ui-monospace, Menlo, Monaco, "Cascadia Mono",
+    "Segoe UI Mono", monospace;
+  color-scheme: dark;
+  background: #0a0f17;
+  font-family: var(--ts-font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% 6%, rgba(55, 167, 214, 0.18), transparent 22%),
+    radial-gradient(circle at 84% 14%, rgba(64, 94, 152, 0.14), transparent 20%),
+    radial-gradient(circle at 50% 120%, rgba(33, 76, 128, 0.16), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 20%),
+    #071019;
+  color: #e5edf6;
+  font-family: var(--ts-font-sans);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(141, 160, 183, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(141, 160, 183, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(180deg, rgba(255, 255, 255, 0.22), transparent 82%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(6, 10, 16, 0.82), transparent 18%, transparent 82%, rgba(6, 10, 16, 0.72)),
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.025), transparent 35%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.font-mono {
+  font-family: var(--ts-font-mono) !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f1724;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #31425b;
+  border-radius: 999px;
+}
+
+::selection {
+  background: rgba(102, 202, 255, 0.22);
+  color: #eff7ff;
+}

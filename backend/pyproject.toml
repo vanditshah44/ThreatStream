@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "threatstream-backend"
+version = "0.1.0"
+description = "ThreatStream backend API and ingestion services."
+requires-python = ">=3.11"
+dependencies = [
+  "a2wsgi>=1.10.8,<2.0.0",
+  "alembic>=1.16.0,<2.0.0",
+  "fastapi>=0.116.0,<1.0.0",
+  "httpx>=0.28.0,<1.0.0",
+  "orjson>=3.10.0,<4.0.0",
+  "pydantic>=2.11.0,<3.0.0",
+  "pydantic-settings>=2.8.0,<3.0.0",
+  "sqlalchemy>=2.0.41,<3.0.0",
+  "uvicorn[standard]>=0.35.0,<1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "mypy>=1.16.0,<2.0.0",
+  "pytest>=8.4.0,<9.0.0",
+  "pytest-asyncio>=1.1.0,<2.0.0",
+  "pytest-cov>=6.2.0,<7.0.0",
+  "ruff>=0.12.0,<1.0.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+strict = true
